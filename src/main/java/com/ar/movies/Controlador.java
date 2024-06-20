@@ -18,6 +18,10 @@ public class Controlador extends HttpServlet { // Declaración de la clase Contr
  
     // Método POST para insertar una nueva película desde una solicitud JSON
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Configurar cabeceras CORS
+        response.setHeader("Access-Control-Allow-Origin", "*"); // Permitir acceso desde cualquier origen
+        response.setHeader("Access-Control-Allow-Methods", "*"); // Métodos permitidos
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Cabeceras permitidas
         Conexion conexion = new Conexion();  // Crear una nueva conexión a la base de datos
         Connection conn = conexion.getConnection();  // Obtener la conexión establecida
 
@@ -63,6 +67,10 @@ public class Controlador extends HttpServlet { // Declaración de la clase Contr
 
     // Método GET para obtener todas las películas almacenadas en la base de datos y devolverlas como JSON
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Configurar cabeceras CORS
+        response.setHeader("Access-Control-Allow-Origin", "*"); // Permitir acceso desde cualquier origen
+        response.setHeader("Access-Control-Allow-Methods", "*"); // Métodos permitidos
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Cabeceras permitidas
         Conexion conexion = new Conexion();  // Crear una nueva conexión a la base de datos
         Connection conn = conexion.getConnection();  // Obtener la conexión establecida
 
